@@ -273,7 +273,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <a href="#detalle">Funciones y precios</a>
       <a href="#plataforma">Plataforma</a>
       <a href="#preguntas">Preguntas</a>
-      <a class="btn primary" href="#contacto">Agenda una demo</a>
+      <a class="btn primary" href="#oficios">Prueba gratis 14 días</a>
     </nav>
   </div>
 </header>
@@ -286,8 +286,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <h1>Un sistema que ya sabe <em>cómo funciona tu negocio</em></h1>
         <p class="lead">NovaERP no es un programa genérico que toca adaptar. Es una familia de sistemas hechos por oficio: la tienda de celulares, la de ropa deportiva, el restaurante y la barbería tienen cada uno el suyo, con sus palabras, sus procesos y sus reportes.</p>
         <div class="cta-row">
-          <a class="btn primary" href="#contacto">Quiero verlo funcionando</a>
-          <a class="btn ghost" href="#detalle">Ver funciones y precios</a>
+          <a class="btn primary" href="#oficios">Prueba gratis 14 días</a>
+          <a class="btn ghost" href="#contacto">Agenda una demo</a>
         </div>
         <div class="trust">
           <span>Se usa desde el celular, sin instalar nada</span>
@@ -318,7 +318,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="section-head">
         <span class="eyebrow">Cuatro oficios, una plataforma</span>
         <h2>Escoge el sistema hecho para tu negocio</h2>
-        <p>Cada vertical comparte la misma base segura y el mismo asistente con IA, pero sus pantallas y procesos son los de tu oficio.</p>
+        <p>Cada vertical comparte la misma base segura y el mismo asistente con IA, pero sus pantallas y procesos son los de tu oficio. Elige el tuyo y pruébalo gratis 14 días, sin tarjeta.</p>
       </div>
       <div class="verticals" id="v-cards"></div>
     </div>
@@ -592,7 +592,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   // Nombre, precio y cupo de cada plan, y los módulos adicionales: los escribe
   // construir.js desde config/planes.js de cada backend (una sola fuente de
   // verdad). Las viñetas de cada plan siguen siendo texto comercial de aquí.
-  var CATALOGO = /*catalogo*/{"techzone":{"planes":[{"id":"tz-emprendedor","nombre":"Emprendedor","precio":59000,"resumen":"1 sede · hasta 2 usuarios"},{"id":"tz-tienda","nombre":"Tienda","precio":109000,"resumen":"1 sede · hasta 6 usuarios"},{"id":"tz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 sedes · 15 usuarios"}],"extras":[["CRM proactivo",19000],["Promociones",15000],["Envíos",15000],["Usuario adicional",9000],["Sede adicional",49000]]},"gearzone":{"planes":[{"id":"gz-tienda","nombre":"Tienda","precio":59000,"resumen":"1 tienda · hasta 3 usuarios"},{"id":"gz-tienda-pro","nombre":"Tienda Pro","precio":109000,"resumen":"1 tienda · hasta 8 usuarios"},{"id":"gz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 tiendas · 20 usuarios"}],"extras":[["Domicilios",15000],["Conteo físico",12000],["Pedidos especiales",9000],["Traslados entre tiendas",25000],["Vista consolidada",19000],["Usuario adicional",9000]]},"gastrobar":{"planes":[{"id":"gb-esquina","nombre":"Esquina","precio":69000,"resumen":"Hasta 4 usuarios"},{"id":"gb-restaurante","nombre":"Restaurante","precio":119000,"resumen":"Hasta 12 usuarios"},{"id":"gb-casa-grande","nombre":"Casa grande","precio":189000,"resumen":"Usuarios sin límite · 1 sede"}],"extras":[["Pantalla de cocina y barra",29000],["Vista de mesero",19000],["Reservas",15000],["Domicilios",19000],["Usuario adicional",9000]]},"glowzone":{"planes":[{"id":"glz-independiente","nombre":"Independiente","precio":49000,"resumen":"1 profesional"},{"id":"glz-barberia","nombre":"Barbería","precio":89000,"resumen":"Hasta 4 profesionales"},{"id":"glz-barberia-grande","nombre":"Barbería grande","precio":139000,"resumen":"5 a 8 profesionales"}],"extras":[["Comisiones",15000],["Fila walk-in con QR",12000],["Tarjeta de sellos",12000],["Reseñas",9000],["Campañas y re-booking",19000],["Profesional adicional",12000]]}}/*fin-catalogo*/;
+  var CATALOGO = /*catalogo*/{"techzone":{"planes":[{"id":"tz-emprendedor","nombre":"Emprendedor","precio":59000,"resumen":"1 sede · hasta 2 usuarios"},{"id":"tz-tienda","nombre":"Tienda","precio":109000,"resumen":"1 sede · hasta 6 usuarios"},{"id":"tz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 sedes · 15 usuarios"}],"extras":[["CRM proactivo",19000],["Promociones",15000],["Envíos",15000],["Usuario adicional",9000],["Sede adicional",49000]]},"gearzone":{"planes":[{"id":"gz-tienda","nombre":"Tienda","precio":59000,"resumen":"1 tienda · hasta 3 usuarios"},{"id":"gz-tienda-pro","nombre":"Tienda Pro","precio":109000,"resumen":"1 tienda · hasta 8 usuarios"},{"id":"gz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 tiendas · 20 usuarios"}],"extras":[["Domicilios",15000],["Conteo físico",12000],["Pedidos especiales",9000],["Traslados entre tiendas",25000],["Vista consolidada",19000],["Usuario adicional",9000],["Tiendas",49000]]},"gastrobar":{"planes":[{"id":"gb-esquina","nombre":"Esquina","precio":69000,"resumen":"Hasta 4 usuarios"},{"id":"gb-restaurante","nombre":"Restaurante","precio":119000,"resumen":"Hasta 12 usuarios"},{"id":"gb-casa-grande","nombre":"Casa grande","precio":189000,"resumen":"Usuarios sin límite · 1 sede"}],"extras":[["Pantalla de cocina y barra",29000],["Vista de mesero",19000],["Reservas",15000],["Domicilios",19000],["Usuario adicional",9000]]},"glowzone":{"planes":[{"id":"glz-independiente","nombre":"Independiente","precio":49000,"resumen":"1 profesional"},{"id":"glz-barberia","nombre":"Barbería","precio":89000,"resumen":"Hasta 4 profesionales"},{"id":"glz-barberia-grande","nombre":"Barbería grande","precio":139000,"resumen":"5 a 8 profesionales"}],"extras":[["Comisiones",15000],["Fila walk-in con QR",12000],["Tarjeta de sellos",12000],["Reseñas",9000],["Campañas y re-booking",19000],["Profesional adicional",12000]]}}/*fin-catalogo*/;
   ORDEN.forEach(function (k) {
     var c = CATALOGO[k];
     if (!c) return;
@@ -616,7 +616,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       '<span class="who">' + v.nombre + '</span>' +
       '<span class="for">' + esc(v.para) + '</span>' +
       '<p>' + esc(v.corto) + '</p>' +
-      '<span class="from">Desde <b class="num">' + pesos(v.planes[0][1]) + '</b> al mes</span></a>';
+      '<span class="from">Desde <b class="num">' + pesos(v.planes[0][1]) + '</b> al mes · <b>Ver planes y probar gratis →</b></span></a>';
   }).join('');
 
   // Pestañas
@@ -636,7 +636,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     f.setAttribute('aria-labelledby', 'tab-' + k);
     f.innerHTML =
       '<div class="ficha-head"><div><span class="eyebrow">' + esc(v.para) + '</span><h2>' + v.nombre + '</h2>' +
-      '<p class="desc">' + esc(v.desc) + '</p></div>' +
+      '<p class="desc">' + esc(v.desc) + '</p>' +
+      '<a class="btn primary" style="margin-top:14px" href=' + JSON.stringify(APP[k] + '/registro') + ' target="_blank" rel="noopener">Probar ' + v.nombre + ' gratis 14 días</a></div>' +
       '<div class="facts">' + v.facts.map(function (x) { return '<div class="fact"><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></div>'; }).join('') + '</div></div>' +
       '<div class="ficha-body">' +
         '<div><div class="sub-head"><h3>Qué incluye</h3><p>Módulos que ya están funcionando hoy en ' + v.nombre + '.</p></div>' +

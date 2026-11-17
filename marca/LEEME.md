@@ -1,22 +1,21 @@
 # Marca NovaERP
 
-Vectorizado el 2026-11-17 a partir del diseño completo del logo (`Downloads/Gemini_Generated_Image_o4j7q9o4j7q9o4j7.jpg`).
+**Origen:** recortes del diseño oficial, no redibujos (2026-11-17).
+- `../../logo.jpg` es el logo sobre papel.
+- `hoja-de-marca.jpg` es la hoja de marca completa.
+- Script: `scratchpad/recortar_logo.py`. Quita el fondo claro dejando bordes suaves.
 
 **Colores:**
-- `#0A1128`: navy, fondo y letras en tema claro.
+- `#0A1128`: navy.
 - `#FFFFFF`: blanco.
-- `#3498DB`: azul de "ERP" y del cuerpo de la flecha.
+- `#3498DB`: azul de "ERP" y de la flecha.
 - `#5DADE2`: punta de la flecha.
 
-**Archivos:**
-- `logo-novaerp-claro.svg`: "NOVA" en navy, para fondos claros.
-- `logo-novaerp-oscuro.svg`: "NOVA" en blanco, para fondos oscuros.
-- `favicon-novaerp.svg`: monograma NE en fondo blanco (favicon).
-- `icono-novaerp.svg`: monograma NE blanco sobre degradado azul (redes e ícono de app).
-- `icono-novaerp-oscuro.svg`: monograma NE sobre navy.
-- `apple-touch-icon.png` (180 px) y `icono-512.png`: generados desde `icono-novaerp.svg`.
-
-**Detalles:**
-- Las letras de "NOVA" son trazos vectoriales (la A sin travesaño, como Λ), así que no dependen de ninguna fuente.
-- "ERP" usa Montserrat o Manrope si están, y si no, Arial Black.
-- En las apps, `components/FirmaNova.jsx` replica este logo con "NOVA" en `currentColor`, para que sirva en tema claro y oscuro.
+| Archivo | Uso |
+|---|---|
+| `logo-novaerp.png` / `logo-novaerp-blanco.png` | Logo sin lema, letras negras (fondo claro) o blancas (fondo oscuro), 788×353 sin fondo |
+| `logo-novaerp-lema.png` / `logo-novaerp-lema-blanco.png` | Con "Lleva tu negocio al siguiente nivel" |
+| `logo-novaerp-120.png` / `logo-novaerp-blanco-120.png` | 268×120, para la web y la firma de las apps (`public/marca/` de cada frontend) |
+| `favicon-64.png`, `favicon-32.png`, `favicon-ne.png` (512) | Monograma NE del diseño |
+| `icono-social.png` / `icono-512.png` | NE blanco sobre azul, esquinas redondeadas transparentes |
+| `apple-touch-icon.png` | 180×180, sin transparencia (iOS redondea solo) |

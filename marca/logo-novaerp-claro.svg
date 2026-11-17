@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 104" role="img" aria-label="NovaERP">
+  <defs>
+    <linearGradient id="fl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1F5FA8"/><stop offset="0.55" stop-color="#3498DB"/><stop offset="1" stop-color="#5DADE2"/>
+    </linearGradient>
+  </defs>
+  <g fill="#0A1128">
+    <path d="M0 72V20h14l23 34V20h14v52H37L14 38v34z"/>
+    <path fill-rule="evenodd" d="M89 18c18.5 0 31 11.6 31 28s-12.5 28-31 28-31-11.6-31-28 12.5-28 31-28zm0 13c-10.2 0-16.6 6.2-16.6 15s6.4 15 16.6 15 16.6-6.2 16.6-15-6.4-15-16.6-15z"/>
+    <path d="M122 20h15l14.5 37L166 20h15l-22 52h-15z"/>
+    <path d="M183 72l22-52h15l22 52h-15l-14.5-36L198 72z"/>
+  </g>
+  <path d="M8 86C86 92 170 70 236 22" fill="none" stroke="url(#fl)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M252 8l-6 24-8-10-11-3z" fill="#5DADE2"/>
+  <text x="244" y="100" text-anchor="end" font-family="Montserrat, Manrope, &apos;Arial Black&apos;, Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="4.5" fill="#3498DB">ERP</text>
+</svg>

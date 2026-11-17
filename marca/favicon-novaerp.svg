@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NovaERP">
-  <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
-  <g fill="#0A1128">
-    <path d="M9 50V22h7.5l11 16V22H35v28h-7.5l-11-16v16z"/>
-    <path d="M38 22h17v6.5h-9.5v4.5H54v6.2h-8.5v4.3H55V50H38z"/>
-  </g>
-  <path d="M22 37L45 15" stroke="#3498DB" stroke-width="3.6" stroke-linecap="round"/>
-  <path d="M52 8l-3 14-5-5-6-2z" fill="#3498DB"/>
-</svg>

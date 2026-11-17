@@ -8,7 +8,8 @@
 <meta property="og:image" content="marca/icono-512.png">
 <style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>NovaERP</title>
-<link rel="icon" type="image/svg+xml" href="marca/favicon-novaerp.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="marca/favicon-64.png">
+<link rel="icon" type="image/png" sizes="32x32" href="marca/favicon-32.png">
 <link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
 <meta name="theme-color" content="#0A1128">
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -83,7 +84,12 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--surface) 92%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
-.brand svg { height: 42px; width: auto; }
+.brand img { height: 46px; width: auto; display: block; }
+/* Logo original (marca/): versión con letras negras o blancas según el tema. */
+.logo-oscuro { display: none !important; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo-claro { display: none !important; } :root:not([data-theme="light"]) .logo-oscuro { display: block !important; } }
+:root[data-theme="dark"] .logo-claro { display: none !important; }
+:root[data-theme="dark"] .logo-oscuro { display: block !important; }
 .nav { display: flex; gap: 22px; align-items: center; }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: .95rem; }
 .nav a:hover { color: var(--nova); }
@@ -259,22 +265,8 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="NovaERP, inicio">
-      <svg viewBox="0 0 262 104" aria-hidden="true">
-        <defs>
-          <linearGradient id="nova-fl" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stop-color="#1F5FA8"/><stop offset="0.55" stop-color="#3498DB"/><stop offset="1" stop-color="#5DADE2"/>
-          </linearGradient>
-        </defs>
-        <g fill="currentColor">
-          <path d="M0 72V20h14l23 34V20h14v52H37L14 38v34z"/>
-          <path fill-rule="evenodd" d="M89 18c18.5 0 31 11.6 31 28s-12.5 28-31 28-31-11.6-31-28 12.5-28 31-28zm0 13c-10.2 0-16.6 6.2-16.6 15s6.4 15 16.6 15 16.6-6.2 16.6-15-6.4-15-16.6-15z"/>
-          <path d="M122 20h15l14.5 37L166 20h15l-22 52h-15z"/>
-          <path d="M183 72l22-52h15l22 52h-15l-14.5-36L198 72z"/>
-        </g>
-        <path d="M8 86C86 92 170 70 236 22" fill="none" stroke="url(#nova-fl)" stroke-width="5" stroke-linecap="round"/>
-        <path d="M252 8l-6 24-8-10-11-3z" fill="#5DADE2"/>
-        <text x="244" y="100" text-anchor="end" font-family="Montserrat, Manrope, &apos;Arial Black&apos;, Arial, sans-serif" font-weight="700" font-size="24" letter-spacing="4.5" fill="#3498DB">ERP</text>
-      </svg>
+      <img class="logo-claro" src="marca/logo-novaerp-120.png" alt="NovaERP" width="268" height="120">
+      <img class="logo-oscuro" src="marca/logo-novaerp-blanco-120.png" alt="NovaERP" width="268" height="120">
     </a>
     <nav class="nav" aria-label="Principal">
       <a href="#oficios">Soluciones</a>

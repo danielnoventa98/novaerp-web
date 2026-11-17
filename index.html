@@ -181,6 +181,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .plan .size { font-weight: 700; }
 .plan ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: .93rem; display: flex; flex-direction: column; gap: 4px; }
 .plan .btn { margin-top: auto; }
+.plan .demo-link { font-size: .85rem; text-align: center; color: var(--muted); }
 .price-note { margin-top: 14px; font-size: .88rem; color: var(--muted); max-width: 80ch; }
 .roadmap { display: flex; flex-wrap: wrap; gap: 8px; }
 .roadmap span { font-size: .85rem; padding: 6px 12px; border-radius: 99px; border: 1px dashed var(--line); color: var(--muted); }
@@ -468,7 +469,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 <footer>
   <div class="wrap">
     <span>© <span id="year">2026</span> NovaERP · Lleva tu negocio al siguiente nivel</span>
-    <span>Hecho en Colombia para PyMEs colombianas</span>
+    <span>Hecho en Colombia para PyMEs colombianas · <a href="terminos.html">Términos y datos personales</a></span>
   </div>
 </footer>
 
@@ -588,11 +589,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     }
   };
   var ORDEN = ['techzone', 'gearzone', 'gastrobar', 'glowzone'];
+  // App de cada vertical: la prueba gratis se crea en su /registro.
+  var APP = {
+    techzone: 'https://techzone-frontend-6yd5.onrender.com',
+    gearzone: 'https://gearzone-frontend.onrender.com',
+    gastrobar: 'https://gastrobar-frontend.onrender.com',
+    glowzone: 'https://glowzone-frontend.onrender.com'
+  };
 
   // Nombre, precio y cupo de cada plan, y los módulos adicionales: los escribe
   // construir.js desde config/planes.js de cada backend (una sola fuente de
   // verdad). Las viñetas de cada plan siguen siendo texto comercial de aquí.
-  var CATALOGO = /*catalogo*/{"techzone":{"planes":[{"nombre":"Emprendedor","precio":59000,"resumen":"1 sede · hasta 2 usuarios"},{"nombre":"Tienda","precio":109000,"resumen":"1 sede · hasta 6 usuarios"},{"nombre":"Cadena","precio":179000,"resumen":"Hasta 3 sedes · 15 usuarios"}],"extras":[["CRM proactivo",19000],["Promociones",15000],["Envíos",15000],["Usuario adicional",9000],["Sede adicional",49000]]},"gearzone":{"planes":[{"nombre":"Tienda","precio":59000,"resumen":"1 tienda · hasta 3 usuarios"},{"nombre":"Tienda Pro","precio":109000,"resumen":"1 tienda · hasta 8 usuarios"},{"nombre":"Cadena","precio":179000,"resumen":"Hasta 3 tiendas · 20 usuarios"}],"extras":[["Domicilios",15000],["Conteo físico",12000],["Pedidos especiales",9000],["Traslados entre tiendas",25000],["Vista consolidada",19000],["Usuario adicional",9000]]},"gastrobar":{"planes":[{"nombre":"Esquina","precio":69000,"resumen":"Hasta 4 usuarios"},{"nombre":"Restaurante","precio":119000,"resumen":"Hasta 12 usuarios"},{"nombre":"Casa grande","precio":189000,"resumen":"Usuarios sin límite · 1 sede"}],"extras":[["Pantalla de cocina y barra",29000],["Vista de mesero",19000],["Reservas",15000],["Domicilios",19000],["Usuario adicional",9000]]},"glowzone":{"planes":[{"nombre":"Independiente","precio":49000,"resumen":"1 profesional"},{"nombre":"Barbería","precio":89000,"resumen":"Hasta 4 profesionales"},{"nombre":"Barbería grande","precio":139000,"resumen":"5 a 8 profesionales"}],"extras":[["Comisiones",15000],["Fila walk-in con QR",12000],["Tarjeta de sellos",12000],["Reseñas",9000],["Campañas y re-booking",19000],["Profesional adicional",12000]]}}/*fin-catalogo*/;
+  var CATALOGO = /*catalogo*/{"techzone":{"planes":[{"id":"tz-emprendedor","nombre":"Emprendedor","precio":59000,"resumen":"1 sede · hasta 2 usuarios"},{"id":"tz-tienda","nombre":"Tienda","precio":109000,"resumen":"1 sede · hasta 6 usuarios"},{"id":"tz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 sedes · 15 usuarios"}],"extras":[["CRM proactivo",19000],["Promociones",15000],["Envíos",15000],["Usuario adicional",9000],["Sede adicional",49000]]},"gearzone":{"planes":[{"id":"gz-tienda","nombre":"Tienda","precio":59000,"resumen":"1 tienda · hasta 3 usuarios"},{"id":"gz-tienda-pro","nombre":"Tienda Pro","precio":109000,"resumen":"1 tienda · hasta 8 usuarios"},{"id":"gz-cadena","nombre":"Cadena","precio":179000,"resumen":"Hasta 3 tiendas · 20 usuarios"}],"extras":[["Domicilios",15000],["Conteo físico",12000],["Pedidos especiales",9000],["Traslados entre tiendas",25000],["Vista consolidada",19000],["Usuario adicional",9000]]},"gastrobar":{"planes":[{"id":"gb-esquina","nombre":"Esquina","precio":69000,"resumen":"Hasta 4 usuarios"},{"id":"gb-restaurante","nombre":"Restaurante","precio":119000,"resumen":"Hasta 12 usuarios"},{"id":"gb-casa-grande","nombre":"Casa grande","precio":189000,"resumen":"Usuarios sin límite · 1 sede"}],"extras":[["Pantalla de cocina y barra",29000],["Vista de mesero",19000],["Reservas",15000],["Domicilios",19000],["Usuario adicional",9000]]},"glowzone":{"planes":[{"id":"glz-independiente","nombre":"Independiente","precio":49000,"resumen":"1 profesional"},{"id":"glz-barberia","nombre":"Barbería","precio":89000,"resumen":"Hasta 4 profesionales"},{"id":"glz-barberia-grande","nombre":"Barbería grande","precio":139000,"resumen":"5 a 8 profesionales"}],"extras":[["Comisiones",15000],["Fila walk-in con QR",12000],["Tarjeta de sellos",12000],["Reseñas",9000],["Campañas y re-booking",19000],["Profesional adicional",12000]]}}/*fin-catalogo*/;
   ORDEN.forEach(function (k) {
     var c = CATALOGO[k];
     if (!c) return;
@@ -601,6 +609,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       V[k].planes[i][0] = p.nombre;
       V[k].planes[i][1] = p.precio;
       V[k].planes[i][2] = p.resumen;
+      V[k].planes[i][4] = p.id;
     });
     V[k].extras = c.extras;
   });
@@ -645,10 +654,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           return '<div class="plan' + (i === 1 ? ' main' : '') + '">' + (i === 1 ? '<span class="badge">El más elegido</span>' : '') +
             '<h3>' + esc(p[0]) + '</h3><div class="price">' + pesos(p[1]) + ' <small>/ mes</small></div>' +
             '<span class="size">' + esc(p[2]) + '</span><ul>' + p[3].map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' +
-            '<a class="btn ' + (i === 1 ? 'primary' : 'ghost') + '" href="' + wa('Hola, quiero una demo de ' + v.nombre + ' (plan ' + p[0] + ').') + '">Pedir demo</a></div>';
+            '<a class="btn ' + (i === 1 ? 'primary' : 'ghost') + '" href=' + JSON.stringify(APP[k] + '/registro' + (p[4] ? '?plan=' + encodeURIComponent(p[4]) : '')) + ' target="_blank" rel="noopener">Probar 14 días gratis</a>' +
+            '<a class="demo-link" href="' + wa('Hola, quiero una demo de ' + v.nombre + ' (plan ' + p[0] + ').') + '">o pide una demo por WhatsApp</a></div>';
         }).join('') + '</div>' +
         '<p class="price-note"><b>Módulos adicionales:</b> ' + v.extras.map(function (x) { return esc(x[0]) + ' ' + pesos(x[1]); }).join(' · ') + ' al mes.</p>' +
-        '<p class="price-note">Precios antes de IVA. Pago anual: 12 meses por el precio de 10. Clientes fundadores: 50 % de descuento los primeros 3 meses. Incluye montaje de tu negocio y capacitación inicial.</p></div>' +
+        '<p class="price-note">Precios antes de IVA. Pago anual: 12 meses por el precio de 10. Clientes fundadores: 50 % de descuento los primeros 3 meses. Incluye montaje de tu negocio y capacitación inicial. La prueba gratis no pide tarjeta.</p></div>' +
         '<div><div class="sub-head"><h3>Lo que viene</h3></div><div class="roadmap">' + v.ruta.map(function (r) { return '<span>' + esc(r) + '</span>'; }).join('') + '</div></div>' +
       '</div>';
     Array.prototype.forEach.call(tabs.children, function (b) {
